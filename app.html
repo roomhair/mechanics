@@ -153,6 +153,29 @@ td:first-child { font-weight: 500; min-width: 6em; }
 td.num { font-variant-numeric: tabular-nums; white-space: normal; font-weight: 400; }
 table.cmp { min-width: 0; table-layout: fixed; }
 table.cmp th:first-child, table.cmp td:first-child { width: 7em; min-width: 0; }
+figure.fig { margin: 4px 0; display: grid; gap: 10px; justify-items: center; padding: 20px 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+.fig svg { width: 100%; max-width: 520px; height: auto; color: var(--ink); font-family: var(--f-sans); overflow: visible; }
+.fig figcaption { font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.7; max-width: 60ch; justify-self: stretch; }
+.fig .ln { stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fig .lm { stroke: var(--ink-3); fill: none; stroke-width: 1.5; }
+.fig .lm2 { stroke: var(--ink-3); fill: none; stroke-width: 2; }
+.fig .la { stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.fig .lng { stroke: var(--ng); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.fig .thick { stroke-width: 4; }
+.fig .dash { stroke-dasharray: 4 5; }
+.fig .fa { fill: var(--accent); }
+.fig .fi { fill: currentColor; }
+.fig .fng { fill: var(--ng); }
+.fig .fsurf { fill: var(--surface); stroke: currentColor; stroke-width: 2; }
+.fig .fsunk { fill: var(--sunken); stroke: var(--ink-3); stroke-width: 1.5; }
+.fig .fz-m { fill: var(--sunken); }
+.fig .fz-aw { fill: var(--accent-weak); }
+.fig .fz-a { fill: var(--accent); opacity: .55; }
+.fig .fz-ng { fill: var(--ng-weak); }
+.fig .tx { fill: currentColor; font-size: 13px; }
+.fig .tm { fill: var(--ink-3); font-size: 12px; }
+.fig .ta { fill: var(--accent); font-size: 13px; font-weight: 700; }
+.fig .tng { fill: var(--ng); font-size: 13px; font-weight: 700; }
 .sources { font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.8; }
 .sources ul { padding-left: 1.2em; margin: 6px 0 0; display: grid; gap: 2px; }
 .sources a { color: var(--ink-2); }
@@ -321,6 +344,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
   <article class="chapter" id="p1">
     <h2>1. 見る位置を決める</h2>
     <p class="prose">同じ投手でも、見る角度によって見えるものが変わります。球場ではまず座る場所を、動画ではカメラの位置を意識しましょう。</p>
+    <figure class="fig"><svg viewBox="0 0 380 315" role="img" aria-label="見る位置によって見えるもの"><defs><marker id="m1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><polygon points="190,250 280,160 190,70 100,160" class="lm"/><rect x="185" y="245" width="10" height="10" transform="rotate(45 190 250)" class="fsurf"/><rect x="275" y="155" width="10" height="10" transform="rotate(45 280 160)" class="fsurf"/><rect x="185" y="65" width="10" height="10" transform="rotate(45 190 70)" class="fsurf"/><rect x="95" y="155" width="10" height="10" transform="rotate(45 100 160)" class="fsurf"/><circle cx="190" cy="168" r="9" class="fsunk"/><line x1="190" y1="286" x2="190" y2="168" class="lm dash"/><circle cx="190" cy="286" r="6" class="fa"/><line x1="190" y1="32" x2="190" y2="168" class="lm dash"/><circle cx="190" cy="32" r="6" class="fa"/><line x1="50" y1="168" x2="190" y2="168" class="lm dash"/><circle cx="50" cy="168" r="6" class="fa"/><line x1="330" y1="168" x2="190" y2="168" class="lm dash"/><circle cx="330" cy="168" r="6" class="fa"/><text x="190" y="306" class="tx" text-anchor="middle">バックネット裏：制球・変化球</text><text x="190" y="18" class="tx" text-anchor="middle">センター方向：開き・踏み出す方向</text><text x="50" y="150" class="ta" text-anchor="middle">三塁側</text><text x="50" y="192" class="tm" text-anchor="middle">右投手の胸側</text><text x="330" y="150" class="ta" text-anchor="middle">一塁側</text><text x="330" y="192" class="tm" text-anchor="middle">右投手の背中側</text><text x="204" y="160" class="tm" text-anchor="start">投手</text><text x="204" y="266" class="tm" text-anchor="start">本塁</text></svg><figcaption>見る位置ごとに見えるもの（右投手の場合）。左投手は一塁側と三塁側が入れ替わる。</figcaption></figure>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>見る位置</th><th>よく見えること</th></tr></thead>
@@ -357,6 +381,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
       <div class="chain" aria-label="運動連鎖の順番"><span>脚（地面を押す）</span><i>→</i><span>骨盤の回転</span><i>→</i><span>体幹（胸）の回転</span><i>→</i><span>肩</span><i>→</i><span>肘</span><i>→</i><span>手・指</span><i>→</i><span>ボール</span></div>
       <p>見る側にとっての意味は、<strong>腕の振りだけを見ても良し悪しはわからない</strong>ということです。腕が速く振れているように見えても、下半身が使えていなければ肩や肘がその分を補っていて、球速が伸びにくく故障もしやすい投手と判断できます。</p>
     </div>
+    <figure class="fig"><svg viewBox="0 0 400 215" role="img" aria-label="回転の速さのピークが骨盤、体幹、肘、肩の順に現れる"><defs><marker id="m2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><line x1="30" y1="185" x2="385" y2="185" class="ln" marker-end="url(#m2)"/><line x1="80" y1="30" x2="80" y2="185" class="lm dash"/><text x="80" y="205" class="tm" text-anchor="middle">着地</text><line x1="318" y1="30" x2="318" y2="185" class="lm dash"/><text x="318" y="205" class="tm" text-anchor="middle">リリース</text><path d="M40 185 Q110 95 180 185" class="lm2"/><text x="110" y="132" class="tx" text-anchor="middle">骨盤</text><path d="M100 185 Q170 51 240 185" class="lm2"/><text x="170" y="110" class="tx" text-anchor="middle">体幹</text><path d="M185 185 Q235 -9 285 185" class="ln"/><text x="235" y="80" class="tx" text-anchor="middle">肘の伸展</text><path d="M260 185 Q300 -105 340 185" class="la"/><text x="300" y="32" class="ta" text-anchor="middle">肩の内旋</text><text x="30" y="18" class="tm" text-anchor="start">回転の速さ</text><text x="385" y="205" class="tm" text-anchor="end">時間</text></svg><figcaption>回転の速さのピークは、骨盤 → 体幹 → 肘 → 肩の順に現れ、末端ほど速くなる（模式図）。</figcaption></figure>
     <div class="look"><b>見るポイント：</b>「脚が止まる → 骨盤が回る → 胸が回る → 腕が振られる」の順番が見えるか。全部が同時に回っている投手は、力を順番に受け渡せていません。</div>
     <p class="sources">参考：<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9076771/" target="_blank" rel="noopener">Throwing Injury Prevention Strategies with a Whole Kinetic Chain-Focused Approach（PMC9076771）</a></p>
   </article>
@@ -385,6 +410,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
         <li><strong>前脚のブレーキ：</strong>着地後に前脚の膝が伸びて踏ん張れているか。膝が前へ流れていく投手は、前進の勢いを回転に変えられていません。球速の高い投手ほど前脚にかかる力が大きいことがわかっています。</li>
       </ul>
     </div>
+    <figure class="fig"><svg viewBox="0 0 380 220" role="img" aria-label="着地の瞬間、骨盤は先に回り、肩はまだ閉じている"><defs><marker id="m3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fi"/></marker></defs><line x1="90" y1="120" x2="250" y2="120" class="ln thick"/><line x1="125.0" y1="66.4" x2="215.0" y2="173.6" class="la thick"/><path d="M215 120 A45 45 0 0 1 198.9 154.5" class="la"/><circle cx="170" cy="120" r="12" class="fsurf"/><line x1="285" y1="120" x2="360" y2="120" class="ln" marker-end="url(#m3)"/><text x="322" y="108" class="tm" text-anchor="middle">捕手</text><text x="20" y="152" class="tx" text-anchor="start">肩のライン（閉じたまま）</text><text x="222" y="158" class="ta" text-anchor="start">捻転差 40〜60°</text><text x="190" y="206" class="ta" text-anchor="middle">骨盤のライン（先に回る）</text></svg><figcaption>踏み出し足の着地の瞬間を上から見た図。骨盤が先に回り、肩のラインがまだ捕手方向を向いていると、その差が捻転差になる。</figcaption></figure>
     <div class="look"><b>見るポイント：</b>センター方向の映像で、着地の瞬間に胸の正面（ユニフォームの前面）がどれだけ見えているか。まだ見えていなければ、開きを我慢できています。</div>
   </article>
 
@@ -398,6 +424,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
         <li><strong>球持ち・出所：</strong>グラブ側の腕や体でボールが隠れ、リリースまで打者からボールが見えにくい投手は、球速以上に打ちにくくなります。体幹が前に倒れリリースが打者に近い（<span class="term">エクステンション</span>が長い）投手も同様です。</li>
       </ul>
     </div>
+    <figure class="fig"><svg viewBox="0 0 400 220" role="img" aria-label="良い肘の高さと肘下がりの比較"><circle cx="100" cy="50" r="14" class="fsurf"/><line x1="100" y1="64" x2="100" y2="150" class="ln"/><line x1="60" y1="75" x2="140" y2="75" class="ln"/><line x1="60" y1="75" x2="28" y2="100" class="ln"/><line x1="140" y1="75" x2="198" y2="75" class="lm dash"/><polyline points="140,75 185,75 185,30" class="la"/><circle cx="185" cy="24" r="6" class="fsurf"/><text x="100" y="180" class="ta" text-anchor="middle">肘が両肩の延長線上</text><circle cx="300" cy="50" r="14" class="fsurf"/><line x1="300" y1="64" x2="300" y2="150" class="ln"/><line x1="260" y1="75" x2="340" y2="75" class="ln"/><line x1="260" y1="75" x2="228" y2="100" class="ln"/><line x1="340" y1="75" x2="398" y2="75" class="lm dash"/><polyline points="340,75 378,108 380,62" class="lng"/><circle cx="380" cy="56" r="6" class="fsurf"/><text x="300" y="180" class="tng" text-anchor="middle">肘下がり</text><text x="200" y="210" class="tm" text-anchor="middle">点線：両肩の延長線</text></svg><figcaption>トップでの肘の高さ。左は肘が両肩を結ぶ線の延長上にある形、右は肘がその線より下がった「肘下がり」。</figcaption></figure>
     <div class="look"><b>見るポイント：</b>最大外旋からリリースまではわずか0.03秒ほどなので、肉眼では腕そのものより「着地の時点で腕がどこにあるか」を見る方が確実です。</div>
   </article>
 
@@ -416,6 +443,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
         </tbody>
       </table>
     </div>
+    <figure class="fig"><svg viewBox="0 0 420 300" role="img" aria-label="右投手の球種ごとのおおよその変化の方向"><line x1="20" y1="170" x2="410" y2="170" class="lm"/><line x1="230" y1="20" x2="230" y2="290" class="lm"/><circle cx="176.0" cy="47.0" r="5" class="fa"/><text x="184" y="43" class="ta" text-anchor="start">フォーシーム</text><circle cx="116.0" cy="110.0" r="5" class="fi"/><text x="116" y="98" class="tx" text-anchor="middle">シンカー</text><circle cx="122.0" cy="125.0" r="5" class="fi"/><text x="113" y="130" class="tx" text-anchor="end">チェンジアップ</text><circle cx="161.0" cy="146.0" r="5" class="fi"/><text x="161" y="168" class="tx" text-anchor="middle">スプリット</text><circle cx="245.0" cy="110.0" r="5" class="fi"/><text x="253" y="106" class="tx" text-anchor="start">カット</text><circle cx="254.0" cy="161.0" r="5" class="fi"/><text x="262" y="155" class="tx" text-anchor="start">スライダー</text><circle cx="338.0" cy="170.0" r="5" class="fi"/><text x="338" y="192" class="tx" text-anchor="middle">スイーパー</text><circle cx="299.0" cy="245.0" r="5" class="fi"/><text x="307" y="250" class="tx" text-anchor="start">カーブ</text><text x="24" y="192" class="tm" text-anchor="start">← 利き腕側</text><text x="410" y="160" class="tm" text-anchor="end">グラブ側 →</text><text x="236" y="30" class="tm" text-anchor="start">伸びる</text><text x="236" y="288" class="tm" text-anchor="start">落ちる</text><text x="224" y="210" class="tm" text-anchor="end">回転なしの球</text></svg><figcaption>右投手の球種ごとのおおよその変化（MLB平均程度の目安）。中心が回転のない球の落ち方で、上ほど落ちずに伸び、横は曲がる方向を表す。</figcaption></figure>
     <div class="note"><b>球の質の基礎知識：</b>直球（フォーシーム）は強いバックスピンで上向きの揚力（マグヌス力）を受け、落下が小さくなります。これが「伸びる」と言われる理由です。カーブは前進回転で大きく落ち、スプリットは回転が少ないため揚力が小さく落ちます。回転数のうち変化に使われる割合を<span class="term">回転効率</span>と呼び、同じ回転数でも効率が高いほどよく変化します。</div>
   </article>
 
@@ -537,6 +565,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
 
   <article class="chapter" id="f3">
     <h2>3. 内野守備</h2>
+    <figure class="fig"><svg viewBox="0 0 380 190" role="img" aria-label="ゴロに少し回り込んで入ると、捕った勢いのまま送球方向へ動ける"><defs><marker id="m6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><defs><marker id="m6i" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fi"/></marker></defs><line x1="30" y1="150" x2="200" y2="150" class="ln" marker-end="url(#m6i)"/><text x="100" y="140" class="tm" text-anchor="middle">打球</text><line x1="215" y1="58" x2="215" y2="136" class="lm dash"/><text x="224" y="100" class="tm" text-anchor="start">正面に突っ込む</text><path d="M215 58 Q160 150 215 150" class="la"/><text x="178" y="102" class="ta" text-anchor="end">回り込んで入る</text><line x1="222" y1="150" x2="350" y2="150" class="la" marker-end="url(#m6)"/><text x="290" y="140" class="ta" text-anchor="middle">一塁へ送球</text><circle cx="215" cy="50" r="7" class="fsurf"/><text x="215" y="32" class="tm" text-anchor="middle">野手</text><circle cx="215" cy="150" r="6" class="fsunk"/><text x="215" y="176" class="tm" text-anchor="middle">捕球</text></svg><figcaption>ゴロへの入り方（上から見た図）。少し回り込んで入ると、捕った勢いのまま送球方向へ体が向く。</figcaption></figure>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>項目</th><th>良い例</th><th>要注意</th></tr></thead>
@@ -592,12 +621,14 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
         <li><strong>崩されたとき：</strong>泳がされても体が残り、バットに当ててヒットにできるか。崩れたときの対応力は、打席を重ねて見ないとわかりません。</li>
       </ul>
     </div>
+    <figure class="fig"><svg viewBox="0 0 390 215" role="img" aria-label="前脚を踏み出しながら、手とバットが後ろに残る割れの形"><defs><marker id="m7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><line x1="20" y1="200" x2="380" y2="200" class="lm"/><circle cx="190" cy="40" r="13" class="fsurf"/><line x1="188" y1="54" x2="182" y2="118" class="ln"/><polyline points="182,118 158,158 150,198" class="ln"/><polyline points="182,118 240,152 278,198" class="ln"/><polyline points="186,70 150,78 132,66" class="ln"/><line x1="132" y1="66" x2="150" y2="10" class="ln thick"/><line x1="140" y1="72" x2="268" y2="190" class="la dash" marker-start="url(#m7)" marker-end="url(#m7)"/><text x="232" y="120" class="ta" text-anchor="start">割れ</text><text x="12" y="100" class="tm" text-anchor="start">手とバットは後ろに残る</text><text x="300" y="186" class="tm" text-anchor="start">前脚は投手方向へ</text><text x="372" y="30" class="tm" text-anchor="end">投手 →</text></svg><figcaption>割れ。前脚は投手方向へ踏み出し、手とバットは後ろに残る。踏み出した足とグリップが適度に離れている状態。</figcaption></figure>
     <div class="look"><b>見るポイント：</b>着地・トップ・インパクトの3コマ。着地で肩が閉じ、トップでバットが後ろに残り、インパクトで前脚が伸びていれば、形の良い打者です。</div>
     <p class="sources">参考：<a href="https://first-pitch.jp/article/well/batting/20240917/8537/" target="_blank" rel="noopener">First-Pitch：打撃スキルでよく聞く「割れ」とは？</a></p>
   </article>
 
   <article class="chapter" id="f7">
     <h2>7. 打球の質と打席の中身</h2>
+    <figure class="fig"><svg viewBox="0 0 460 275" role="img" aria-label="打球角度ごとの打球の種類"><path d="M40 250 L290.0 250.0 A250 250 0 0 0 286.2 206.6 Z" class="fz-m"/><path d="M40 250 L287.6 215.2 A250 250 0 0 0 252.0 117.5 Z" class="fz-aw"/><path d="M40 250 L264.7 140.4 A250 250 0 0 0 256.5 125.0 Z" class="fz-a"/><path d="M40 250 L200.7 58.5 A250 250 0 0 0 83.4 3.8 Z" class="fz-ng"/><line x1="40" y1="250" x2="450" y2="250" class="lm"/><path d="M290 250 A250 250 0 0 0 83.4 3.8" class="lm"/><circle cx="40" cy="250" r="6" class="fi"/><text x="46" y="268" class="tm" text-anchor="start">打者</text><text x="296" y="240" class="tx" text-anchor="start">ゴロ（10°未満）</text><text x="294" y="186" class="ta" text-anchor="start">スイートスポット 8〜32°</text><text x="270" y="124" class="ta" text-anchor="start">バレル 26〜30°</text><text x="118" y="100" class="tng" text-anchor="middle">ポップフライ 50°超</text></svg><figcaption>打球角度の目安。濃い緑のバレルは、さらに打球速度98mph以上が条件で、速いほど範囲が広がる。</figcaption></figure>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>用語</th><th>意味</th><th>目安</th></tr></thead>
@@ -622,6 +653,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
 
   <article class="chapter" id="f8">
     <h2>8. 走塁：タイムと走り方</h2>
+    <figure class="fig"><svg viewBox="0 0 440 300" role="img" aria-label="一塁を回るときは手前でふくらみ、内側の角を踏む"><defs><marker id="m9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><rect x="174" y="264" width="12" height="12" transform="rotate(45 180 270)" class="fsurf"/><rect x="284" y="154" width="12" height="12" transform="rotate(45 290 160)" class="fsurf"/><rect x="174" y="44" width="12" height="12" transform="rotate(45 180 50)" class="fsurf"/><polyline points="180,270 290,160 186,56" class="lm dash"/><path d="M180 270 L258 192 Q300 176 286 160 L192 62" class="la" marker-end="url(#m9)"/><text x="298" y="200" class="ta" text-anchor="start">手前で少し外へふくらむ</text><text x="300" y="150" class="ta" text-anchor="start">内側の角を踏む</text><text x="180" y="292" class="tm" text-anchor="middle">本塁</text><text x="298" y="180" class="tm" text-anchor="start">一塁</text><text x="180" y="32" class="tm" text-anchor="middle">二塁</text><text x="150" y="170" class="tm" text-anchor="end">点線：まっすぐ走ると</text><text x="150" y="186" class="tm" text-anchor="end">一塁で大きくふくらむ</text></svg><figcaption>長打で一塁を回るときの走り方。手前で少し外へふくらみ、ベースの内側の角を踏むと、回る距離のロスが減る。</figcaption></figure>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>計測</th><th>測り方</th><th>目安</th></tr></thead>
@@ -728,7 +760,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
       <span class="tag">POINT 2 ・ ヒップローテーション</span>
       <h3>お尻を長く捕手側に向け、着地後に一気に回す</h3>
       <p>右投手なら、右のお尻を捕手側にできるだけ長く向けたままステップし、その後に左のお尻が二塁側を向き始め、リリース後にはお尻が完全に二塁側を向きます。これがヒップローテーションです。体の前側では、軸脚の付け根にできていた「股関節のしわ」が、踏み出し脚の付け根へと入れ替わります。</p>
-      <ul class="prose-list">
+      <figure class="fig"><svg viewBox="0 0 420 185" role="img" aria-label="右投手の骨盤を上から見たときの、お尻の向きの移り変わり"><defs><marker id="m10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><g transform="rotate(0 70 80)"><ellipse cx="70" cy="80" rx="20" ry="46" class="fsurf"/><line x1="70" y1="80" x2="122" y2="80" class="la" marker-end="url(#m10)"/></g><text x="70" y="160" class="tx" text-anchor="middle">ステップ中</text><text x="70" y="177" class="tm" text-anchor="middle">右のお尻が捕手側</text><g transform="rotate(90 210 80)"><ellipse cx="210" cy="80" rx="20" ry="46" class="fsurf"/><line x1="210" y1="80" x2="262" y2="80" class="la" marker-end="url(#m10)"/></g><text x="210" y="160" class="tx" text-anchor="middle">着地のあと</text><text x="210" y="177" class="tm" text-anchor="middle">一気に回す</text><g transform="rotate(180 350 80)"><ellipse cx="350" cy="80" rx="20" ry="46" class="fsurf"/><line x1="350" y1="80" x2="402" y2="80" class="la" marker-end="url(#m10)"/></g><text x="350" y="160" class="tx" text-anchor="middle">リリース後</text><text x="350" y="177" class="tm" text-anchor="middle">お尻が二塁側</text><text x="410" y="18" class="tm" text-anchor="end">捕手 →</text><text x="10" y="18" class="tm" text-anchor="start">← 二塁</text><path d="M120 30 Q210 -2 300 30" class="lm dash"/></svg><figcaption>ヒップローテーション（右投手の骨盤を上から見た図）。緑の矢印はお尻（右の臀部）の向き。ステップ中は捕手側に長く向け、着地のあと一気に二塁側へ回す。</figcaption></figure>
+    <ul class="prose-list">
         <li>ステップに入るとき軸脚の付け根にしわが入っていないと、体幹を使った投球にならない</li>
         <li>ステップ中に骨盤が早く正面を向くのはパワーロス。しわをできるだけ長く保ち、着地以降で一気に体幹を回すと腕に負担がかかりにくい</li>
         <li>お尻の奥の骨盤は背骨で肋骨につながり、肋骨は腕につながる。木の幹が回ると枝が振られるのと同じで、お尻が回ると腕が振られる</li>
@@ -778,7 +811,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
       <span class="tag">POINT 6 ・ 両膝の角度</span>
       <h3>軸足が浮くかより、「浮くまでの過程」と両膝の角度を見る</h3>
       <p>大谷翔平投手のリリースで軸足が浮くことの是非について、浮くかどうかではなく、浮くまでの過程と浮いている間の動作で見方が変わるとしています。「軸脚の伸展＋内旋 → 重心移動」がうまく働くと、踏み出し脚に強い力がかかるため膝を伸ばしてブレーキをかける必要があり、その結果として軸足が浮く投手が多いという見方です。</p>
-      <ul class="prose-list">
+      <figure class="fig"><svg viewBox="0 0 400 215" role="img" aria-label="リリースの瞬間、軸脚の膝は約110度、踏み出し脚の膝は約180度"><line x1="20" y1="208" x2="380" y2="208" class="lm"/><circle cx="262" cy="38" r="13" class="fsurf"/><line x1="190" y1="110" x2="252" y2="52" class="ln"/><polyline points="252,52 300,34" class="ln"/><circle cx="306" cy="31" r="6" class="fsurf"/><polyline points="252,52 222,92" class="ln"/><line x1="190" y1="110" x2="300" y2="205" class="la thick"/><polyline points="190,110 140,160 165,205" class="ln thick"/><path d="M152.7 147.3 A18 18 0 0 1 148.7 175.7" class="la"/><text x="128" y="164" class="tx" text-anchor="end">軸脚 約110°</text><text x="258" y="150" class="ta" text-anchor="start">踏み出し脚 約180°</text><text x="20" y="28" class="ta" text-anchor="start">合計 300°近くが目安</text></svg><figcaption>リリースの瞬間の両膝の角度。踏み出し脚の膝がピンと伸びて体を受け止め、合計で300°近くになるのが望ましいとされる。</figcaption></figure>
+    <ul class="prose-list">
         <li>リリースでの両膝の裏の角度は、合計で300度近くが望ましいとされる（軸脚が約110度、踏み出し脚が約180度など）</li>
         <li>合計が200度に近いと重心が前に寄りすぎて腕の振り幅がなくなり、上体頼みの投げ方になる</li>
         <li>エンゼルス入団後の大谷投手は合計250度弱で、踏み出し脚の膝の張りが弱い。軸足が浮くのは下半身がうまく使えた結果とは別の理由ではないか、と仮定している</li>
@@ -877,6 +911,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
   <article class="chapter" id="k1">
     <h2>1. うで体とあし体</h2>
     <p class="prose">鴻江理論では、タイプは生まれつきのもので、タイプに合わない動きを続けると不調や痛みにつながるとされます。選手を見るときは「この選手はどちらのタイプで、そのタイプらしく動けているか」という見方になります。</p>
+    <figure class="fig"><svg viewBox="0 0 380 275" role="img" aria-label="背中側から見ると、うで体は左肩が高く、あし体は右肩が高い"><circle cx="95" cy="40" r="14" class="fsurf"/><line x1="50" y1="62" x2="140" y2="78" class="ln thick"/><circle cx="50" cy="62" r="5" class="fa"/><line x1="95" y1="55" x2="95" y2="140" class="ln"/><line x1="65" y1="140" x2="125" y2="140" class="ln"/><line x1="73" y1="140" x2="67" y2="200" class="ln"/><line x1="117" y1="140" x2="123" y2="200" class="ln"/><text x="61" y="220" class="tm" text-anchor="middle">左</text><text x="129" y="220" class="tm" text-anchor="middle">右</text><text x="95" y="248" class="ta" text-anchor="middle">うで体</text><text x="95" y="266" class="tm" text-anchor="middle">左肩が高い・腕から始動</text><circle cx="285" cy="40" r="14" class="fsurf"/><line x1="240" y1="78" x2="330" y2="62" class="ln thick"/><circle cx="330" cy="62" r="5" class="fa"/><line x1="285" y1="55" x2="285" y2="140" class="ln"/><line x1="255" y1="140" x2="315" y2="140" class="ln"/><line x1="263" y1="140" x2="257" y2="200" class="ln"/><line x1="307" y1="140" x2="313" y2="200" class="ln"/><text x="251" y="220" class="tm" text-anchor="middle">左</text><text x="319" y="220" class="tm" text-anchor="middle">右</text><text x="285" y="248" class="ta" text-anchor="middle">あし体</text><text x="285" y="266" class="tm" text-anchor="middle">右肩が高い・足から始動</text></svg><figcaption>背中側から見た肩の高さの傾向。うで体は左肩、あし体は右肩が高く見えるとされる（目安）。</figcaption></figure>
     <div class="tbl-wrap">
       <table class="cmp">
         <thead><tr><th></th><th>うで体</th><th>あし体</th></tr></thead>
@@ -1019,7 +1054,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
     <div class="point" id="pt15">
       <span class="tag">並進</span>
       <h3>並進中の6つのチェック</h3>
-      <div class="tbl-wrap">
+      <figure class="fig"><svg viewBox="0 0 380 190" role="img" aria-label="並進中の骨盤は左右が水平な方が良い"><circle cx="95" cy="16" r="11" class="fsurf"/><line x1="95" y1="28" x2="95" y2="70" class="ln"/><line x1="55" y1="70" x2="135" y2="70" class="la thick"/><line x1="65" y1="71" x2="47" y2="140" class="ln"/><line x1="125" y1="69" x2="139" y2="140" class="ln"/><line x1="35" y1="70" x2="155" y2="70" class="lm dash"/><text x="95" y="165" class="ta" text-anchor="middle">左右の骨盤が水平</text><text x="95" y="182" class="tm" text-anchor="middle">まっすぐ前へ体重移動</text><circle cx="271" cy="16" r="11" class="fsurf"/><line x1="271" y1="28" x2="285" y2="70" class="ln"/><line x1="245" y1="56" x2="325" y2="84" class="lng thick"/><line x1="255" y1="57" x2="237" y2="140" class="ln"/><line x1="315" y1="83" x2="329" y2="140" class="ln"/><line x1="225" y1="70" x2="345" y2="70" class="lm dash"/><text x="285" y="165" class="tng" text-anchor="middle">片側が上がる（シーソー）</text><text x="285" y="182" class="tm" text-anchor="middle">後半で上体が突っ込む</text></svg><figcaption>センター方向から見た並進中の骨盤。左右が水平だと体重がまっすぐ前へ移り、傾いていると後半でシーソーのように逆に傾いて上体が突っ込みやすい。</figcaption></figure>
+    <div class="tbl-wrap">
         <table>
           <thead><tr><th>チェック</th><th>できていないと</th></tr></thead>
           <tbody>
@@ -1135,7 +1171,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
       <span class="tag">踏み込み</span>
       <h3>トラウト型とカブレラ型</h3>
       <p>踏み込むと軸が後ろ脚から前脚に移ります。軸が前脚に移ってから本格的にスイングを始めると、始動と見極めを遅らせることができます。骨盤の回し方には2つの型があるとしています。</p>
-      <div class="tbl-wrap">
+      <figure class="fig"><svg viewBox="0 0 400 215" role="img" aria-label="トラウト型は後ろ脚、カブレラ型は前脚で骨盤を回す"><defs><marker id="m14" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><circle cx="96" cy="16" r="10" class="fsurf"/><line x1="96" y1="27" x2="100" y2="70" class="ln"/><polyline points="100,70 142,115 156,165" class="ln"/><polyline points="100,70 94,120 56,165" class="la thick"/><path d="M66 134 Q82 128 90 114" class="la" marker-end="url(#m14)"/><line x1="20" y1="166" x2="180" y2="166" class="lm"/><text x="100" y="190" class="ta" text-anchor="middle">トラウト型</text><text x="100" y="207" class="tm" text-anchor="middle">後ろ脚の膝を投手側へ向ける</text><circle cx="296" cy="16" r="10" class="fsurf"/><line x1="296" y1="27" x2="300" y2="70" class="ln"/><polyline points="300,70 276,118 256,165" class="ln"/><line x1="300" y1="70" x2="352" y2="165" class="la thick"/><line x1="350" y1="140" x2="330" y2="96" class="la" marker-end="url(#m14)"/><line x1="220" y1="166" x2="380" y2="166" class="lm"/><text x="300" y="190" class="ta" text-anchor="middle">カブレラ型</text><text x="300" y="207" class="tm" text-anchor="middle">前脚の膝を伸ばして押し戻す</text><text x="392" y="14" class="tm" text-anchor="end">投手 →</text></svg><figcaption>骨盤の回し方の2つの型（横から見た模式図）。緑の脚が骨盤を回す主役。</figcaption></figure>
+    <div class="tbl-wrap">
         <table class="cmp">
         <thead><tr><th></th><th>トラウト型</th><th>カブレラ型</th></tr></thead>
           <tbody>
@@ -1241,6 +1278,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
   <article class="chapter" id="s2">
     <h2>2. 肘に負担がかかる3つの場面</h2>
     <p class="prose">野球肘の選手に「どこで痛いか」を聞くと、ほとんどが「胸を張ったとき」と「ボールが離れるとき」と答えるそうです。研究でも、肘の負担が最も大きいのは胸を張ったとき（腕が後ろへ持っていかれたとき）、次がリリースだと示されています。</p>
+    <figure class="fig"><svg viewBox="0 0 420 210" role="img" aria-label="肘にかかる2種類のストレス：外反と伸展"><defs><marker id="m15n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fng"/></marker></defs><defs><marker id="m15" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><circle cx="40" cy="120" r="7" class="fsunk"/><polyline points="40,120 130,120 108,44" class="ln thick"/><circle cx="104" cy="36" r="7" class="fsurf"/><line x1="128" y1="140" x2="104" y2="152" class="lng" marker-end="url(#m15n)"/><line x1="134" y1="140" x2="160" y2="152" class="lng" marker-end="url(#m15n)"/><text x="100" y="186" class="tx" text-anchor="middle">胸を張ったとき</text><text x="100" y="203" class="tng" text-anchor="middle">外反：肘の内側が引っ張られる</text><circle cx="240" cy="120" r="7" class="fsunk"/><polyline points="240,120 310,104 372,84" class="ln thick"/><circle cx="380" cy="80" r="7" class="fsurf"/><path d="M300 86 Q314 70 330 82" class="lng" marker-end="url(#m15n)"/><text x="310" y="186" class="tx" text-anchor="middle">リリースのあたり</text><text x="310" y="203" class="tng" text-anchor="middle">伸展：肘が伸ばされる</text><text x="40" y="140" class="tm" text-anchor="middle">肩</text><text x="240" y="140" class="tm" text-anchor="middle">肩</text></svg><figcaption>肘に負担がかかる場面（投げる腕を正面から見た模式図）。胸を張ったときは肘の内側が引っ張られ（外反）、リリースのあたりでは肘が伸ばされる（伸展）。</figcaption></figure>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>場面</th><th>かかるストレス</th><th>見えやすい動き</th></tr></thead>
@@ -1296,6 +1334,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
         <li>腕を横に上げる角度が小さい選手は、腕を背中側へ水平に引く動きで代わりに補うことがあり、これは肩の前側の障害につながりやすい</li>
       </ul>
     </div>
+    <figure class="fig"><svg viewBox="0 0 400 205" role="img" aria-label="テイクバックで肩の内旋から外旋への切り替わる位置"><line x1="30" y1="90" x2="380" y2="90" class="lm dash"/><text x="380" y="82" class="tm" text-anchor="end">両肩のライン</text><circle cx="80" cy="90" r="7" class="fsunk"/><text x="80" y="112" class="tm" text-anchor="middle">肩</text><path d="M120 190 Q190 190 230 40" class="ln"/><circle cx="216" cy="98" r="7" class="fa"/><text x="230" y="112" class="ta" text-anchor="start">わずかに低い位置で切り替わる</text><circle cx="176" cy="168" r="7" class="fng"/><text x="192" y="176" class="tng" text-anchor="start">明らかに低い位置 → 肘下がりに</text><text x="234" y="34" class="tm" text-anchor="start">トップ</text><text x="112" y="194" class="tm" text-anchor="end">腕の通り道</text></svg><figcaption>テイクバックで、肩が内にひねる動きから外にひねる動きへ切り替わる位置（模式図）。両肩のラインのわずか下が一般的で、明らかに低いと肘下がりにつながりやすい。</figcaption></figure>
     <p class="sources">出典：note「<a href="https://note.com/ko_bmk/n/n3aeccb1fc181" target="_blank" rel="noopener">テイクバック｜肩からみる動作分析</a>」（2020年4月）</p>
   </article>
 
@@ -1492,6 +1531,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
 
   <article class="chapter" id="n6">
     <h2>6. 変化球の見方</h2>
+    <figure class="fig"><svg viewBox="0 0 420 298" role="img" aria-label="球種ごとの変化の方向を時計で表した図"><circle cx="210" cy="150" r="105" class="lm"/><line x1="210.0" y1="53.0" x2="210.0" y2="45.0" class="lm"/><line x1="258.5" y1="66.0" x2="262.5" y2="59.1" class="lm"/><line x1="294.0" y1="101.5" x2="300.9" y2="97.5" class="lm"/><line x1="307.0" y1="150.0" x2="315.0" y2="150.0" class="lm"/><line x1="294.0" y1="198.5" x2="300.9" y2="202.5" class="lm"/><line x1="258.5" y1="234.0" x2="262.5" y2="240.9" class="lm"/><line x1="210.0" y1="247.0" x2="210.0" y2="255.0" class="lm"/><line x1="161.5" y1="234.0" x2="157.5" y2="240.9" class="lm"/><line x1="126.0" y1="198.5" x2="119.1" y2="202.5" class="lm"/><line x1="113.0" y1="150.0" x2="105.0" y2="150.0" class="lm"/><line x1="126.0" y1="101.5" x2="119.1" y2="97.5" class="lm"/><line x1="161.5" y1="66.0" x2="157.5" y2="59.1" class="lm"/><text x="210" y="72" class="tm" text-anchor="middle">12</text><text x="292" y="155" class="tm" text-anchor="middle">3</text><text x="210" y="238" class="tm" text-anchor="middle">6</text><text x="128" y="155" class="tm" text-anchor="middle">9</text><line x1="210" y1="150" x2="255.5" y2="71.2" class="la"/><text x="271.5" y="43.5" class="ta" text-anchor="start">フォーシーム</text><line x1="210" y1="150" x2="288.8" y2="104.5" class="ln"/><text x="316.5" y="88.5" class="tx" text-anchor="start">シンカー</text><text x="316.5" y="103.5" class="tx" text-anchor="start">チェンジアップ</text><line x1="210" y1="150" x2="164.5" y2="228.8" class="ln"/><text x="148.5" y="256.5" class="tx" text-anchor="end">カーブ</text><line x1="210" y1="150" x2="131.2" y2="195.5" class="ln"/><text x="103.5" y="211.5" class="tx" text-anchor="end">スイーパー</text><circle cx="210" cy="150" r="4" class="fi"/><text x="210" y="26" class="tm" text-anchor="middle">12時：伸びる</text><text x="210" y="288" class="tm" text-anchor="middle">6時：落ちる</text><text x="329" y="172" class="tm" text-anchor="start">利き腕側</text><text x="91" y="172" class="tm" text-anchor="end">グラブ側</text></svg><figcaption>右投手の球種ごとの変化の方向を時計で表した目安。12時が真上（伸びる）、3時が利き腕側。</figcaption></figure>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>球種</th><th>見るポイント</th></tr></thead>
