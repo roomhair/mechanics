@@ -156,6 +156,8 @@ th, td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid v
 thead th { color: var(--ink-3); font-weight: 500; font-size: var(--fs-xs); letter-spacing: .04em; border-bottom-color: var(--ink-3); }
 td:first-child { font-weight: 500; min-width: 6em; }
 td.num { font-variant-numeric: tabular-nums; white-space: normal; font-weight: 400; }
+table.cmp { min-width: 0; table-layout: fixed; }
+table.cmp th:first-child, table.cmp td:first-child { width: 7em; min-width: 0; }
 .sources { font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.8; }
 .sources ul { padding-left: 1.2em; margin: 6px 0 0; display: grid; gap: 2px; }
 .sources a { color: var(--ink-2); }
@@ -883,7 +885,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
     <h2>1. うで体とあし体</h2>
     <p class="prose">鴻江理論では、タイプは生まれつきのもので、タイプに合わない動きを続けると不調や痛みにつながるとされます。選手を見るときは「この選手はどちらのタイプで、そのタイプらしく動けているか」という見方になります。</p>
     <div class="tbl-wrap">
-      <table>
+      <table class="cmp">
         <thead><tr><th></th><th>うで体</th><th>あし体</th></tr></thead>
         <tbody>
           <tr><td>姿勢</td><td>猫背寄り</td><td>反り腰寄り</td></tr>
@@ -1141,8 +1143,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
       <h3>トラウト型とカブレラ型</h3>
       <p>踏み込むと軸が後ろ脚から前脚に移ります。軸が前脚に移ってから本格的にスイングを始めると、始動と見極めを遅らせることができます。骨盤の回し方には2つの型があるとしています。</p>
       <div class="tbl-wrap">
-        <table>
-          <thead><tr><th></th><th>トラウト型</th><th>カブレラ型</th></tr></thead>
+        <table class="cmp">
+        <thead><tr><th></th><th>トラウト型</th><th>カブレラ型</th></tr></thead>
           <tbody>
             <tr><td>骨盤の回し方</td><td>後ろ脚の膝を投手側へ向けるように後ろ脚の股関節を内旋させる</td><td>踏み込んだ前脚の膝を伸ばして骨盤を押し戻す</td></tr>
             <tr><td>構え</td><td>背筋を伸ばし気味</td><td>最初から上体を前傾気味</td></tr>
@@ -1461,7 +1463,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
       <p>投手は、直球を投げるときの腕のひねり方で大きく2つに分けられます（Driveline のアナリスト Chris Langin の分類を紹介）。</p>
     </div>
     <div class="tbl-wrap">
-      <table>
+      <table class="cmp">
         <thead><tr><th></th><th>回内型（Pronator）</th><th>回外型（Supinator）</th></tr></thead>
         <tbody>
           <tr><td>腕の動き</td><td>直球を投げるとき、前腕が最初から内側に入る</td><td>一度外側に入り、自然とカットするような動き</td></tr>
